@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CampusClubHub Dashboard</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-bright": "#f8f9ff",
+                  "error-container": "#ffdad6",
+                  "background": "#f8f9ff",
+                  "tertiary-container": "#2170e4",
+                  "tertiary": "#0058be",
+                  "inverse-surface": "#27313f",
+                  "surface-container": "#e6eeff",
+                  "on-surface-variant": "#464554",
+                  "on-tertiary-fixed": "#001a42",
+                  "tertiary-fixed": "#d8e2ff",
+                  "surface-tint": "#494bd6",
+                  "secondary-container": "#6cf8bb",
+                  "primary-fixed": "#e1e0ff",
+                  "on-primary": "#ffffff",
+                  "on-tertiary-fixed-variant": "#004395",
+                  "surface-container-high": "#dee9fc",
+                  "primary": "#4648d4",
+                  "secondary": "#006c49",
+                  "surface-container-lowest": "#ffffff",
+                  "outline-variant": "#c7c4d7",
+                  "on-secondary-fixed": "#002113",
+                  "surface-container-highest": "#d9e3f6",
+                  "on-surface": "#121c2a",
+                  "on-error-container": "#93000a",
+                  "surface": "#f8f9ff",
+                  "primary-fixed-dim": "#c0c1ff",
+                  "secondary-fixed": "#6ffbbe",
+                  "tertiary-fixed-dim": "#adc6ff",
+                  "inverse-primary": "#c0c1ff",
+                  "on-error": "#ffffff",
+                  "on-secondary-container": "#00714d",
+                  "primary-container": "#6063ee",
+                  "surface-dim": "#d0dbed",
+                  "on-primary-fixed": "#07006c",
+                  "error": "#ba1a1a",
+                  "outline": "#767586",
+                  "on-tertiary": "#ffffff",
+                  "on-secondary": "#ffffff",
+                  "secondary-fixed-dim": "#4edea3",
+                  "on-background": "#121c2a",
+                  "on-secondary-fixed-variant": "#005236",
+                  "on-primary-container": "#fffbff",
+                  "surface-variant": "#d9e3f6",
+                  "surface-container-low": "#eff4ff",
+                  "on-tertiary-container": "#fefcff",
+                  "on-primary-fixed-variant": "#2f2ebe",
+                  "inverse-on-surface": "#eaf1ff"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "xs": "8px",
+                  "gutter": "16px",
+                  "base": "4px",
+                  "sm": "12px",
+                  "md": "16px",
+                  "lg": "24px",
+                  "xl": "32px",
+                  "container-margin": "20px"
+          },
+          "fontFamily": {
+                  "headline-lg-mobile": ["Plus Jakarta Sans"],
+                  "headline-md": ["Plus Jakarta Sans"],
+                  "body-md": ["Inter"],
+                  "headline-lg": ["Plus Jakarta Sans"],
+                  "headline-xl": ["Plus Jakarta Sans"],
+                  "body-lg": ["Inter"],
+                  "label-md": ["Inter"]
+          },
+          "fontSize": {
+                  "headline-lg-mobile": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                  "headline-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                  "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                  "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                  "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                  "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                  "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    body {
+      min-height: 100dvh;
+    }
+
+    .status-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface-bright/80 backdrop-blur-md">
+<div class="flex items-center justify-between px-container-margin py-xs w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[28px]">grid_view</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tight">CampusClubHub</h1>
+</div>
+<div class="active:scale-95 duration-200 transition-transform cursor-pointer">
+<div class="w-10 h-10 rounded-full border-2 border-primary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile of a cheerful student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWyhrpHS0OaUhJJBorK3TMQaGoasFLlRHGCrJNWruIJ7X9V4GFF26VQICAu5t0N1UbevP1J-VOBGwFHIJ1NZbjNmi5-3oa33365LXRblcRGnG1Cv7FnUWnJMwK_5-o9Nn_p06ndUpxrFWGwkxhThGiAsxBSfUc2cliYnqtvHWT94NrFzQL_Y2ROglL83o-Z_qXFmxpFRcgpBhKViRrwXdTDFz9gT6L_r48-p7ORRAtk1todv4z3siA"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin pt-lg space-y-xl">
+<!-- Club Overview Metrics -->
+<section class="space-y-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Club Overview</h2>
+<div class="grid grid-cols-3 gap-sm">
+<!-- Active Events -->
+<div class="p-md rounded-xl bg-primary text-on-primary shadow-sm flex flex-col items-center justify-center text-center space-y-xs">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<div class="text-xl font-bold">3</div>
+<span class="text-[10px] uppercase font-bold opacity-80">Events</span>
+</div>
+<!-- Members -->
+<div class="p-md rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center space-y-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">group</span>
+<div class="text-xl font-bold">124</div>
+<span class="text-[10px] uppercase font-bold text-outline">Members</span>
+</div>
+<!-- Updates -->
+<div class="p-md rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center space-y-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">campaign</span>
+<div class="text-xl font-bold">2</div>
+<span class="text-[10px] uppercase font-bold text-outline">Updates</span>
+</div>
+</div>
+</section>
+<!-- Upcoming Events -->
+<section class="space-y-md">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-surface">Upcoming Events</h2>
+<button class="text-primary font-label-md hover:underline flex items-center gap-xs">See all <span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+<div class="flex gap-md overflow-x-auto no-scrollbar pb-base -mx-container-margin px-container-margin">
+<!-- Event Card: Attending -->
+<div class="min-w-[280px] bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden shadow-sm flex flex-col">
+<div class="h-32 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAx6lOzdojyHgzWF3j8CKYEKl0NHqUP3k8ft1TMM1dsxqXtWFEA5jWfhG0vRGf2t6ixpoq3HiXYB_q5g2GrR97zmdd8IdwJAlpoKyLQ4OQKBz1PhAMGYdvr9U5TsLw1BhHD1uBDyjnLXPoRcxN_mS9JF0dFkqx2WbdJwVFu5fdjyX334rplZsvAtbmvvIDfOgc7hM1X-vMwRkFoHCm0Bw7G0A7_gLtNWoV3dBBUg-PNpTFx1_UzCTtD')"></div>
+<div class="p-md flex-1 flex flex-col justify-between space-y-sm">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-md text-on-surface leading-tight">Tech Workshop</h3>
+<span class="status-badge bg-secondary-container text-on-secondary-container">Attending</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Oct 24 • 5:00 PM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Event Card: Interested -->
+<div class="min-w-[280px] bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden shadow-sm flex flex-col">
+<div class="h-32 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMsW0sOJR5KfnPQ-xj_a92UfKtQSmXJ89ThzWPUdPbWTqQPT-599tk55oa0gy_hFKt37HGPVjbCXA0iY1-OajL03ypElmjaByFOAwRvzvZoMG2NKR3DkWH_uDwNF4ZKiW-pot_j2xVIcNveOgBBqHBh6sQG5uoNQxLzZuovqnXUbbuqHnA7N5brOTbYa9InOQImWOF-obliLk2A30eYTM7rl4JfZDasi1W7GrlOg4Fx0-rKudJm0Q9')"></div>
+<div class="p-md flex-1 flex flex-col justify-between space-y-sm">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-md text-on-surface leading-tight">Networking Mixer</h3>
+<span class="status-badge bg-surface-container-high text-on-surface-variant">Interested</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Oct 28 • 6:30 PM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Event Card: Waitlisted -->
+<div class="min-w-[280px] bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden shadow-sm flex flex-col">
+<div class="h-32 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpMoiVFyL8NVZUQhVLFfHrmcrMldaoBb8pMHrbpmxNlYoELlNLxzy7k8MA2UqZLSVBSVK5SEwv4BGrsvV-_8ftdV0KmSUJc8gee11XXowkups9T4DpP_U5SAR2XZFOuA8ercYqljVB1eaiVeA0CTznyyyWRSaR9NKExBUYgY8ytz9M5eJDNzI_XmPereTZA1LR5FHY3t0UNvBt9MUaovgFDFfZf977BeyFu7htEjX6yidB-ItLzsUp')"></div>
+<div class="p-md flex-1 flex flex-col justify-between space-y-sm">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-md text-on-surface leading-tight">Annual General Meet</h3>
+<span class="status-badge bg-error-container text-on-error-container">Waitlisted</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Nov 02 • 4:00 PM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Member Management Preview -->
+<section class="space-y-md">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-surface">Member Management</h2>
+<a class="text-primary font-label-md hover:underline" href="#">View Directory</a>
+</div>
+<div class="p-md rounded-xl bg-surface-container-low border border-outline-variant flex items-center justify-between">
+<div class="flex -space-x-2 items-center">
+<div class="w-10 h-10 rounded-full border-2 border-surface-bright overflow-hidden bg-surface-container">
+<img alt="Member" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoSa2HFF3SmAuw3Fddo_xrDD2F3fIptsos6bcF-tC8kH0xiv2MFGcMBI7d6NmhJttIf3X1mZ4CKqsN-m10SWXRtLcWN8fHndFMtXMGVpn8fs1rLo04SrynGbXMiYge8CX-_Bhak6N86-hgcyTstZjG97MasTmRkcYxiYnQDEt6AcoCsRUrQzxGDZUwJMj3X8Cor3cHX2aVgizYWwIynAR9VGSpoBCOWnXUENDmi56IVABOFzHIFmSs"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface-bright overflow-hidden bg-surface-container">
+<img alt="Member" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbo4l-W2gO8biku3HVk6OVJrq_TK3cgV33sXHOvBRZuLIDBRljTmMcPcui29e12ZjuDTgjWVufeItnxm8ouv6kgd2HXlaWm_Grd4RsguqMcIfK0TeiLdZca8HoNLIvu3jfpDyRPw9KNsJ51Ss-xb3-K_CroZB2GVb07tjYgn9_ctCMy0cheLiljdhIgPzuWWzATW8qBgMQOKSxjQSl_MYK_gHp8SYUkifwNe0eE0n5iYPjtf6kkVwd"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface-bright overflow-hidden bg-surface-container">
+<img alt="Member" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDqlNJjfRgTczIfS_JjcPXhhfjwy-S1yk8v223zY9acbYsTLPO3mHARJzWo9T8NCyXukplLahATnh-3jud9GP9x6e1VXD7Z0wOXBjkMaKTOKzuDlyvJbocdfVZakTMPLC5GdeydMhF5FkYiBFENltjpCCZve8qsk5-o5_1-Q3cp9oI8v083TbmrOcSqV86QHwvbwERcge-md0IyxjkRDPhO19N1SIbTzs2a8eNkR-VJB9fQi22UnP5"/>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed border-2 border-surface-bright flex items-center justify-center text-on-primary-fixed text-[10px] font-bold">
+            +121
+          </div>
+</div>
+<button class="bg-surface-container-highest text-on-surface-variant px-sm py-xs rounded-lg text-label-md font-bold hover:brightness-95 transition-all">
+          Manage
+        </button>
+</div>
+</section>
+<!-- Recent News -->
+<section class="space-y-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent News</h2>
+<div class="space-y-sm">
+<div class="p-md rounded-xl bg-surface-container-low border-l-4 border-primary flex gap-md items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">info</span>
+<div>
+<p class="font-body-md text-on-surface leading-tight">Meeting moved to Room 302 for tomorrow's sync.</p>
+<span class="text-xs text-outline mt-1 block">2 hours ago</span>
+</div>
+</div>
+<div class="p-md rounded-xl bg-surface-container-low border-l-4 border-secondary flex gap-md items-start">
+<span class="material-symbols-outlined text-secondary mt-0.5">celebration</span>
+<div>
+<p class="font-body-md text-on-surface leading-tight">Welcome our new Treasurer, Sarah Jenkins!</p>
+<span class="text-xs text-outline mt-1 block">Yesterday</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Multi-Action FAB -->
+<div class="fixed bottom-24 right-6 flex flex-col items-end gap-sm pointer-events-none z-40">
+<!-- Secondary Action: Announcement (Initially hidden/small if animated, but shown here for layout) -->
+<button class="pointer-events-auto w-12 h-12 bg-secondary text-on-secondary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-all hover:brightness-110">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+</button>
+<!-- Primary Action: Create Event -->
+<button class="pointer-events-auto w-14 h-14 bg-primary text-on-primary rounded-full shadow-xl flex items-center justify-center active:scale-90 transition-all hover:brightness-110">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-xs pb-8 bg-surface-container-lowest z-50 rounded-t-2xl shadow-[0px_-4px_16px_rgba(31,41,55,0.08)]">
+<!-- Dashboard (Active) -->
+<a class="flex flex-col items-center justify-center text-primary group" href="#">
+<div class="bg-primary-container px-5 py-1 rounded-full mb-1 group-active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</div>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<!-- Events -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">calendar_month</span>
+<span class="font-label-md text-label-md">Events</span>
+</a>
+<!-- Members -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">group</span>
+<span class="font-label-md text-label-md">Members</span>
+</a>
+<!-- News -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">campaign</span>
+<span class="font-label-md text-label-md">News</span>
+</a>
+</nav>
+<script>
+    // Minimal scroll behavior for FAB
+    let lastScroll = 0;
+    const fabContainer = document.querySelector('.fixed.bottom-24');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll && currentScroll > 60) {
+        fabContainer.style.opacity = '0.3';
+        fabContainer.style.transform = 'translateY(10px)';
+        fabContainer.style.pointerEvents = 'none';
+      } else {
+        fabContainer.style.opacity = '1';
+        fabContainer.style.transform = 'translateY(0)';
+        fabContainer.style.pointerEvents = 'auto';
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+</body></html>
