@@ -11,24 +11,27 @@ The task is split into three parts:
 
 ## Task A
 
-For Task A, I used Google Stitch to create a GUI design for CampusClubHub.
+For Task A, I used **Google Stitch** to create a GUI design for CampusClubHub.
 
 This GUI design belongs to the app that I will continue in Task B using Lovable.
 
 ## Task B
 
-For Task B, I used Lovable to create a middle-sized pet project called CampusClubHub.
+For Task B, I used **Lovable** to create a middle-sized pet project called CampusClubHub.
 
 The project is an app for a student club with events, members, announcements and sign-ups.
 
 ## Task C
 
-For Task C, I built a separate distributed Python app called CampusMessenger using Google Antigravity.
+For Task C, I built a separate distributed Python app called CampusMessenger using **Google Antigravity**.
 
 The goal is to create a modular client/server app and understand every code file.
 
 ## Current Status
 
-- Task A: in progress
-- Task B: not started yet
+- Task A: Completed
+- Task B: in progress
 - Task C: not started yet
+
+
+Disclaimer: AI was used during the development of this task.
