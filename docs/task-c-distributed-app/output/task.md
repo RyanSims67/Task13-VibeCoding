@@ -1,0 +1,11 @@
+- `[x]` Install/verify dependencies in `requirements.txt`
+- `[x]` Implement shared data model (`shared/message_model.py`)
+- `[x]` Implement storage layer (`server/storage/message_storage.py`)
+- `[x]` Implement service layer (`server/services/message_service.py`)
+- `[x]` Implement routes (`server/routes/message_routes.py`)
+- `[x]` Implement Flask entry point (`server/app.py`)
+- `[x]` Implement client API wrapper (`client/api_client.py`)
+- `[x]` Implement Tkinter GUI client (`client/gui_client.py`)
+- `[x]` Implement unit tests (`tests/test_message_storage.py` and `tests/test_message_service.py`)
+- `[x]` Run unit tests and verify everything builds and works
+- `[x]` Write documentation in `README.md`
