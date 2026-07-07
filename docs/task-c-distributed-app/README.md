@@ -53,7 +53,7 @@ Message Storage
     ↓
 JSON file
 ```
-## Markdown Files
+## Markdown Files - From Google Antigravity
 
 [Implementation Plan](output/implementation_plan.md)
 
