@@ -31,7 +31,7 @@ The goal is to create a modular client/server app and understand every code file
 
 - Task A: Completed
 - Task B: Completed
-- Task C: in progress
+- Task C: Completed
 
 
 Disclaimer: AI was used during the development of this task.
