@@ -88,18 +88,6 @@ I tested:
 
 The most important check was opening two clients and seeing that both clients could view the same messages.
 
-## Optional CLI Proof
-
-If required, I can also show CLI proof using Gemini CLI or another terminal-based AI tool.
-
-The screenshot for this would be:
-
-```text
-screenshots/cli-tool-proof.png
-```
-
-If I include this screenshot, it shows that I also tested a CLI-based AI tool.
-
 ## Short Personal Reflection
 
 Using Antigravity was useful because it helped me start the project structure quickly.
