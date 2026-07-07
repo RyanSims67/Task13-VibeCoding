@@ -6,8 +6,8 @@ The task is split into three parts:
 | Part | Tool Used | App / Idea | Link |
 |---|---|---|---|
 | Task A | Google Stitch | CampusClubHub GUI Design | [Task A](docs/task-a-google-stitch/README.md) |
-| Task B | Lovable | CampusClubHub Pet Project | Coming later |
-| Task C | VS Code Clone / CLI Tool | CampusMessenger Distributed App | Coming later |
+| Task B | Lovable | CampusClubHub Pet Project | [Task B](docs/task-b-lovable/README.md) |
+| Task C | Google Antigravity | CampusMessenger Distributed App | [Task C](docs/task-c-distributed-app/README.md) |
 
 ## Task A
 
@@ -30,8 +30,8 @@ The goal is to create a modular client/server app and understand every code file
 ## Current Status
 
 - Task A: Completed
-- Task B: in progress
-- Task C: not started yet
+- Task B: Completed
+- Task C: in progress
 
 
 Disclaimer: AI was used during the development of this task.
