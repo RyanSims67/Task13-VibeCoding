@@ -1,0 +1,1 @@
+# CampusMessenger package initializer
